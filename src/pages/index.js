@@ -25,7 +25,7 @@ class IndexPage extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <>
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Lukas Juhlén</title>
@@ -52,6 +52,7 @@ class IndexPage extends React.Component {
                         </div>
                     </div>
                 </header>
+            <div className="container">
                 <main>
                     <article className="about">
                         <h2>About</h2>
@@ -74,6 +75,7 @@ class IndexPage extends React.Component {
                     &copy; 2020 Lukas Juhlén
                 </footer>
             </div>
+        </>
         )
     }
 };

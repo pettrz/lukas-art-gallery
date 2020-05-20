@@ -35,13 +35,11 @@ html, body {
 }
 
 .hero {
-    // height: 650px;
-    padding-bottom: 81.1%;
-    height: 0;
+    // padding-bottom: 60%;
+    height: 600px;
     background-image: url("https://images.unsplash.com/photo-1549716679-95380658d5cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
     background-attachment: fixed;
     filter: grayscale(100);
-    // background-size: cover;
     background-position: center 0;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -51,7 +49,7 @@ html, body {
 .about {
     background-color: white;
     padding: 80px 80px 80px 80px;
-    margin-top: 450px
+    margin-top: 500px
 }
 
 h2, p {
@@ -70,8 +68,7 @@ p {
     row-gap: 50px;
     background-color: white;
     justify-content: center;
-    // margin-bottom: 82vh;
-    box-shadow: 0 4px 0 0;
+    box-shadow: 0 3px 0 0;
 
     &-entry {
         background-size: cover;
@@ -97,7 +94,6 @@ p {
         margin: 0;
     }
     .canvas-item {
-        // margin-left: 15px;
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
@@ -139,6 +135,7 @@ p {
         margin-left: 19px;
         margin-top: 91px;
         background-image: url("../../static/img/4.jpg");
+        transform: rotate(-0.5deg);
     }
     
     .box5 {
