@@ -67,6 +67,9 @@ class IndexPage extends React.Component {
                         ))}
                     </div>
                 </main>
+                <div className="bottom">
+                    
+                </div>
                 <footer>
                     &copy; 2020 Lukas Juhlén
                 </footer>

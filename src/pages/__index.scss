@@ -35,7 +35,9 @@ html, body {
 }
 
 .hero {
-    height: 650px;
+    // height: 650px;
+    padding-bottom: 81.1%;
+    height: 0;
     background-image: url("https://images.unsplash.com/photo-1549716679-95380658d5cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
     background-attachment: fixed;
     filter: grayscale(100);
@@ -68,7 +70,7 @@ p {
     row-gap: 50px;
     background-color: white;
     justify-content: center;
-    margin-bottom: 82vh;
+    // margin-bottom: 82vh;
     box-shadow: 0 4px 0 0;
 
     &-entry {
@@ -84,10 +86,9 @@ p {
     padding-top: 90px;
     display: flex;
     position: fixed;
-    top: 80px;
+    top: 70px;
     right: 0;
     left: 0;
-    top: 10vh;
     left: 50%;
     margin-left: -397px; /* Negative half of width. */
     z-index: -1;
@@ -118,7 +119,7 @@ p {
     }
 
     .box2 {
-        width: 119px;
+        width: 118px;
         height: 200px;
         margin-top: 35px;
         margin-left: 13px;
@@ -126,17 +127,17 @@ p {
     }
 
     .box3 {
-        width: 242px;
+        width: 241px;
         height: 240px;
-        margin-left: 18px;
+        margin-left: 20px;
         background-image: url("../../static/img/2.jpg");
     }
 
     .box4 {
-        width: 161px;
+        width: 160px;
         height: 163px;
         margin-left: 19px;
-        margin-top: 86px;
+        margin-top: 91px;
         background-image: url("../../static/img/4.jpg");
     }
     
@@ -152,8 +153,13 @@ p {
         height: 163px;
         margin-top: 10px;
         margin-left: 18px;
+        transform: rotate(-0.2deg);
         background-image: url("../../static/img/1.jpg");
     }
+}
+
+.bottom {
+    height: 82vh;
 }
 
 footer {
