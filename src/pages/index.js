@@ -33,14 +33,24 @@ class IndexPage extends React.Component {
 
     render() {
         return (
-            <>
+            <div className="container">
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Lukas Juhlén</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 </Helmet>
                 <header>
-                    <nav className="navbar">Lukas Juhlén</nav>
+                    <nav className="navbar">
+                        <div className="navigation">
+                            {/* Todo soon */}
+                        </div>
+                        <div className="author">Lukas Juhlén</div>
+                        <div className="socials">
+                        <a href="https://www.instagram.com/lukasjuhlen" title="Visit Lukas' instagram page" className="instagram-icon">
+                            <img width="25px" height="25px" src={require('../../static/img/instagram-icon.svg')} alt="Lukas Juhlen's instagram"/>
+                        </a>
+                        </div>
+                    </nav>
                     <div className="hero">
                     </div>
                     <div className="canvas">
@@ -60,7 +70,6 @@ class IndexPage extends React.Component {
                         </div>
                     </div>
                 </header>
-            <div className="container">
                 <main>
                     <article className="about">
                         <h2>Works</h2>
@@ -86,7 +95,6 @@ class IndexPage extends React.Component {
                     </a>
                 </footer>
             </div>
-        </>
         )
     }
 };
