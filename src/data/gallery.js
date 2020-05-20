@@ -19,5 +19,10 @@ export const gallery = [
         "_id": 4,
         "name": "4",
         "title": "4"
+    },
+    {
+        "_id": 5,
+        "name": "5",
+        "title": "5"
     }
 ]

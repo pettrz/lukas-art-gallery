@@ -1,19 +1,18 @@
-import React, { useEffect, useCallback } from 'react';
+import React from 'react';
 import _ from 'lodash';
 import { gallery } from '../data/gallery';
+import { Helmet } from 'react-helmet';
 import './__index.scss';
 
 class IndexPage extends React.Component {
 
     getScrollOffset() {
-        var el = document.querySelector('.about');
+        const about = document.querySelector('.about');
 
-        // get scroll position in px
-        console.log(el.offsetTop, window.scrollY);
         const scrolly = window.scrollY - 300;
-        console.log(scrolly/1000);
 
-        el.style.opacity = (scrolly / 500).toString();
+        about.style.opacity = (scrolly / 700).toString();
+        
     };
 
     componentDidMount() {
@@ -27,6 +26,11 @@ class IndexPage extends React.Component {
     render() {
         return (
             <div className="container">
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Lukas Juhlén</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                </Helmet>
                 <header>
                     <nav className="navbar">Lukas Juhlén</nav>
                     <div className="hero">
@@ -59,7 +63,6 @@ class IndexPage extends React.Component {
                         {gallery.map(({ _id, name}) => (
                             <div className="gallery-entry" key={_id} 
                             style={{ backgroundImage: `url(${require(`../../static/img/${name}.jpg`)})`}}>
-                                {/* <img key={_id} height="400px" width="240px" src={require(`../../static/img/${name}.jpg`)} alt={name}/> */}
                             </div>
                         ))}
                     </div>
