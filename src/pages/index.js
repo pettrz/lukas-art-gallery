@@ -8,11 +8,19 @@ class IndexPage extends React.Component {
 
     getScrollOffset() {
         const about = document.querySelector('.about');
-
+        const scrollUp = document.querySelector('.scroll-up-shortcut');
         const scrolly = window.scrollY - 300;
+        about.style.opacity = (scrolly / 750).toString();
 
-        about.style.opacity = (scrolly / 700).toString();
-        
+        if (window.scrollY < 800) {
+            scrollUp.style.opacity = 0;
+        } else {
+            scrollUp.style.opacity = 1;
+        }
+    };
+
+    scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
     };
 
     componentDidMount() {
@@ -55,10 +63,8 @@ class IndexPage extends React.Component {
             <div className="container">
                 <main>
                     <article className="about">
-                        <h2>About</h2>
-                        <p><strong>Lukas Juhlén</strong> is simply dummy text of the printing and typesetting industry.<br/>
-                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <br/>
-                         when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <h2>Works</h2>
+                        {/* <p>insert description</p> */}
                     </article>
                     <div className="gallery">
                         {gallery.map(({ _id, name}) => (
@@ -73,6 +79,11 @@ class IndexPage extends React.Component {
                 </div>
                 <footer>
                     &copy; 2020 Lukas Juhlén
+                    
+                    <a href="javascript:void(0);" onClick={this.scrollToTop}
+                    title="Scroll to top" className="scroll-up-shortcut">
+                        <img width="20px" height="20px" src={require('../../static/img/scroll-up-icon.svg')} alt="scroll to top of page"/>
+                    </a>
                 </footer>
             </div>
         </>
