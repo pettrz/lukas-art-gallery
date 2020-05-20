@@ -51,8 +51,6 @@ class IndexPage extends React.Component {
                         </a>
                         </div>
                     </nav>
-                    <div className="hero">
-                    </div>
                     <div className="canvas">
                         <div>
                             <div className="canvas-item box1"></div>  
@@ -70,6 +68,8 @@ class IndexPage extends React.Component {
                         </div>
                     </div>
                 </header>
+                <div className="hero">
+                </div>
                 <main>
                     <article className="about">
                         <h2>Works</h2>
