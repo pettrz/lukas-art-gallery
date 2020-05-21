@@ -100,6 +100,12 @@ p {
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
+        cursor: pointer;
+        transition: ease-in 150ms;
+        &:hover {
+            transform: scale(1.01);
+            filter: grayscale(0.6);
+        }
     }
 }
 
@@ -115,9 +121,11 @@ p {
     left: 50%;
     margin-left: -397px; /* Negative half of width. */
     z-index: -1;
+
     .row {
         margin: 0;
     }
+
     .canvas-item {
         background-size: cover;
         background-position: center center;
@@ -184,6 +192,18 @@ p {
     height: 82vh;
 }
 
+.btn {
+    transition: ease-in 200ms;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    &:hover {
+        background-color: #D2D2D2;
+    }
+}
+
 footer {
     justify-content: center;
     font-size: 14px;
@@ -196,16 +216,7 @@ footer {
         transform: rotate(-90deg);
         right: 30px;
         bottom: 30px;
-        padding: 10px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: ease-in 200ms;
         opacity: 0;
-        &:hover {
-            background-color: #D2D2D2;
-        }
     }
 }
 

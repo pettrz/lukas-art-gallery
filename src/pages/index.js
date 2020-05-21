@@ -2,9 +2,17 @@ import React from 'react';
 import _ from 'lodash';
 import { gallery } from '../data/gallery';
 import { Helmet } from 'react-helmet';
+import OpenEntry from './open-entry/open-entry'
 import './__index.scss';
 
 class IndexPage extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            openEntry: undefined
+        }
+        this.closeModal = this.closeModal.bind(this);
+    }
 
     getScrollOffset() {
         const about = document.querySelector('.about');
@@ -29,6 +37,8 @@ class IndexPage extends React.Component {
         }
     };
 
+    
+
     scrollToTop() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     };
@@ -44,6 +54,11 @@ class IndexPage extends React.Component {
     componentWillUnmount() {
         window.removeEventListener('scroll', this.getScrollOffset);
     }
+
+    closeModal() {
+        this.setState({ openEntry: undefined })
+    }
+
 
     render() {
         return (
@@ -93,12 +108,14 @@ class IndexPage extends React.Component {
                         {/* <p>insert description</p> */}
                     </article>
                     <div className="gallery">
-                        {gallery.map(({ _id, name}) => (
-                            <div className="gallery-entry" key={_id} 
-                            style={{ backgroundImage: `url(${require(`../../static/img/${name}.jpg`)})`}}>
+                        {gallery.map(entry => (
+                            <div className="gallery-entry" key={entry._id} onClick={() => this.setState({ openEntry: entry})}
+                            style={{ backgroundImage: `url(${require(`../../static/img/${entry.name}.jpg`)})`}}>
                             </div>
                         ))}
                     </div>
+
+                    {this.state.openEntry && <OpenEntry entry={this.state.openEntry} closeModal={this.closeModal}/>}
                 </main>
                 <div className="bottom">
                     
@@ -107,7 +124,7 @@ class IndexPage extends React.Component {
                     &copy; 2020 Lukas Juhlén
                     
                     <a href="javascript:void(0);" onClick={this.scrollToTop}
-                    title="Scroll to top" className="scroll-up-shortcut">
+                    title="Scroll to top" className="scroll-up-shortcut btn">
                         <img width="20px" height="20px" src={require('../../static/img/scroll-up-icon.svg')} alt="scroll to top of page"/>
                     </a>
                 </footer>
