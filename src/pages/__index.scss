@@ -31,6 +31,7 @@ button {
     margin-top: 30px;
     transition: ease-in 200ms;
     opacity: 1;
+    display: none; // readd in future
 }
 
 .visually-hidden {
@@ -64,10 +65,15 @@ button {
     overflow: hidden;
 }
 
+main {
+    z-index: 100;
+}
+
 .about {
     background-color: white;
     padding: 80px 80px 160px 80px;
-    margin-top: 500px
+    margin-top: 500px;
+    z-index: 100;
 }
 
 h2, p {
@@ -78,6 +84,7 @@ p {
 }
 
 .gallery {
+    z-index: 100;
     display: grid;
     padding: 0 30px 180px 30px;
     flex: 1;
@@ -96,7 +103,7 @@ p {
     }
 }
 
-.canvas {
+.canvas, .fake-canvas {
     height: 900px;
     width: 775px;
     padding-top: 90px;
@@ -173,6 +180,12 @@ p {
     }
 }
 
+.fake-canvas {
+    opacity: 0.12;
+    filter: grayscale(100);
+    z-index: 9;
+}
+
 .bottom {
     height: 82vh;
 }
@@ -222,7 +235,7 @@ footer {
         height: 400px;
         z-index: -1;
     }
-    .canvas {
+    .canvas, .fake-canvas {
         top: 205px;
     }
 

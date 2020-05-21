@@ -10,6 +10,8 @@ class IndexPage extends React.Component {
         const about = document.querySelector('.about');
         const scrollUp = document.querySelector('.scroll-up-shortcut');
         const heroBtn = document.querySelector('.hero-btn');
+        const fakeCanvas = document.querySelector('.fake-canvas');
+
         const scrolly = window.scrollY - 300;
         about.style.opacity = (scrolly / 750).toString();
 
@@ -17,6 +19,12 @@ class IndexPage extends React.Component {
             scrollUp.style.opacity = 0;
         } else {
             scrollUp.style.opacity = 1;
+        }
+
+        if (window.scrollY < 800) {
+            fakeCanvas.style.opacity = 0.12;
+        } else {
+            fakeCanvas.style.opacity = 0;
         }
 
         if (window.scrollY < 1) {
@@ -66,6 +74,22 @@ class IndexPage extends React.Component {
                     </div>
                     <div className="hero-btn">
                         <button onClick={this.scrollToGallery}>Uncover my art</button>
+                    </div>
+                    <div className="fake-canvas">
+                        <div>
+                            <div className="canvas-item box1"></div>  
+                        </div>
+                        <div className="column-wrapper">
+                            <div className="row">
+                                <div className="canvas-item box2"></div>
+                                <div className="canvas-item box3"></div>
+                                <div className="canvas-item box4"></div>
+                            </div>
+                            <div className="row">
+                                <div className="canvas-item box5"></div>
+                                <div className="canvas-item box6"></div>
+                            </div>
+                        </div>
                     </div>
                     <div className="canvas">
                         <div>
