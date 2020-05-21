@@ -41,7 +41,6 @@ class IndexPage extends React.Component {
     };
 
     
-
     scrollToTop() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     };
@@ -49,19 +48,18 @@ class IndexPage extends React.Component {
     scrollToGallery() {
         window.scrollTo({top: 850, behavior: 'smooth'});
     };
-
-    componentDidMount() {
-        window.addEventListener('scroll', this.getScrollOffset);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.getScrollOffset);
-    }
-
+    
     closeModal() {
         this.setState({ openEntry: undefined })
     }
 
+    componentDidMount() {
+        document.addEventListener("scroll", this.getScrollOffset);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("scroll", this.getScrollOffset);
+    }
 
     render() {
         return (
@@ -78,7 +76,7 @@ class IndexPage extends React.Component {
                         </div>
                         <div className="author">Lukas Juhlén</div>
                         <div className="socials">
-                        <a href="https://www.instagram.com/lukasjuhlen" title="Visit Lukas' instagram page" className="instagram-icon">
+                        <a href="https://www.instagram.com/lukasjuhlen" title="Visit Lukas' instagram page" className="instagram-icon btn">
                             <img width="25px" height="25px" src={require('../../static/img/instagram-icon.svg')} alt="Lukas Juhlen's instagram"/>
                         </a>
                         </div>
@@ -118,7 +116,7 @@ class IndexPage extends React.Component {
                         ))}
                     </div>
 
-                    {this.state.openEntry && <OpenEntry entry={this.state.openEntry} closeModal={this.closeModal}/>}
+                    {this.state.openEntry && <OpenEntry entry={this.state.openEntry} closeModal={this.closeModal} closeModalEsc={this.closeModalEsc}/>}
                 </main>
                 <div className="bottom">
                     
