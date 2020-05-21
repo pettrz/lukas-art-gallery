@@ -28,7 +28,8 @@ const OpenEntry = ({ entry, closeModal }) => {
         </a>
         <div className="glass"></div>
         <div className="entry-wrapper">
-            <div className="entry-canvas" title={title} style={{ backgroundImage: name ? `url(${require(`../../../static/img/${name}.jpg`)})` : ''}}>
+            <div className="entry-canvas" title={title}>
+                <img src={require(`../../../static/img/${name}.jpg`)} alt=""/>
             </div>
             <div className="entry-description">
                 <h2>
