@@ -26,8 +26,10 @@ class IndexPage extends React.Component {
         if (scrollUp) {
             if (window.scrollY < 800) {
                 scrollUp.style.opacity = 0;
+                scrollUp.style.pointerEvents = "none";
             } else {
                 scrollUp.style.opacity = 1;
+                scrollUp.style.pointerEvents = "auto";
             }
         }
 
