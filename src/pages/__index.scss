@@ -103,7 +103,7 @@ p {
     }
 }
 
-.canvas, .fake-canvas {
+.canvas {
     height: 900px;
     width: 775px;
     padding-top: 90px;
@@ -180,12 +180,6 @@ p {
     }
 }
 
-.fake-canvas {
-    opacity: 0.12;
-    filter: grayscale(100);
-    z-index: 9;
-}
-
 .bottom {
     height: 82vh;
 }
@@ -235,7 +229,7 @@ footer {
         height: 400px;
         z-index: -1;
     }
-    .canvas, .fake-canvas {
+    .canvas {
         top: 205px;
     }
 
