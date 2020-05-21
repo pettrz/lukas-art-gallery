@@ -5,7 +5,7 @@ const OpenEntry = ({ entry, closeModal }) => {
     return (<>
         <div className="glass"></div>
         <div className="entry-wrapper">
-            <div className="entry-canvas" style={{ backgroundImage: `url(${require(`../../../static/img/${entry.name}.jpg`)})`}}>
+            <div className="entry-canvas" style={{ backgroundImage: entry.name ? `url(${require(`../../../static/img/${entry.name}.jpg`)})` : ''}}>
             </div>
             <div className="entry-description">
                 <h2>
