@@ -9,6 +9,7 @@ class IndexPage extends React.Component {
     getScrollOffset() {
         const about = document.querySelector('.about');
         const scrollUp = document.querySelector('.scroll-up-shortcut');
+        const heroBtn = document.querySelector('.hero-btn');
         const scrolly = window.scrollY - 300;
         about.style.opacity = (scrolly / 750).toString();
 
@@ -17,10 +18,20 @@ class IndexPage extends React.Component {
         } else {
             scrollUp.style.opacity = 1;
         }
+
+        if (window.scrollY < 1) {
+            heroBtn.style.opacity = 1;
+        } else {
+            heroBtn.style.opacity = 0;
+        }
     };
 
     scrollToTop() {
         window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
+    scrollToGallery() {
+        window.scrollTo({top: 1050, behavior: 'smooth'});
     };
 
     componentDidMount() {
@@ -51,6 +62,11 @@ class IndexPage extends React.Component {
                         </a>
                         </div>
                     </nav>
+                    <div className="hero">
+                    </div>
+                    <div className="hero-btn">
+                        <button onClick={this.scrollToGallery}>Uncover my art</button>
+                    </div>
                     <div className="canvas">
                         <div>
                             <div className="canvas-item box1"></div>  
@@ -68,8 +84,6 @@ class IndexPage extends React.Component {
                         </div>
                     </div>
                 </header>
-                <div className="hero">
-                </div>
                 <main>
                     <article className="about">
                         <h2>Works</h2>
