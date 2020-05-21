@@ -1,11 +1,13 @@
 import React from 'react';
+import _ from 'lodash';
 import './open-entry.scss';
 
 const OpenEntry = ({ entry, closeModal }) => {
+    const name = _.get(entry, 'name', null);
     return (<>
         <div className="glass"></div>
         <div className="entry-wrapper">
-            <div className="entry-canvas" style={{ backgroundImage: entry.name ? `url(${require(`../../../static/img/${entry.name}.jpg`)})` : ''}}>
+            <div className="entry-canvas" style={{ backgroundImage: name ? `url(${require(`../../../static/img/${name}.jpg`)})` : ''}}>
             </div>
             <div className="entry-description">
                 <h2>
