@@ -15,13 +15,17 @@ const OpenEntry = ({ entry, closeModal }) => {
     
     useEffect(() => {
         document.addEventListener("keydown", closeModalEscape, false);
-
+        document.documentElement.style.overflow = "hidden";
         return () => {
             document.removeEventListener("keydown", closeModalEscape, false);
+            document.documentElement.style.overflow = "auto";
         };
     }, []);
 
     return (<>
+        <a href="javascript:void(0);" className="close-modal btn" title="Close view" onClick={closeModal}>
+            <img width="20px" height="20px" src={require('./close.svg')} alt="Close image modal"/>
+        </a>
         <div className="glass"></div>
         <div className="entry-wrapper">
             <div className="entry-canvas" title={title} style={{ backgroundImage: name ? `url(${require(`../../../static/img/${name}.jpg`)})` : ''}}>
@@ -35,9 +39,6 @@ const OpenEntry = ({ entry, closeModal }) => {
                         {description}
                     </p>
                 </div>
-                <a href="javascript:void(0);" className="close-modal btn" title="Close view" onClick={closeModal}>
-                    <img width="20px" height="20px" src={require('./close.svg')} alt="Close image modal"/>
-                </a>
             </div>
         </div>
     </>);
