@@ -26,6 +26,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         width: 50%;
+
     }
 
     .entry-description {
@@ -44,4 +45,41 @@
             }
         }
     }
+}
+
+@media (max-width: 992px) {
+    .entry-wrapper {
+        flex-direction: column;
+        height: 70vh;
+        width: 400px;
+        margin-left: -200px; /* Negative half of width. */
+        .entry-description {
+            width: 100%;
+            height: 35%;
+            .close-modal {
+                position: fixed;
+                right: 45px;
+                top: 15px;
+                width: 30px;
+                height: 30px;
+                text-decoration: none;
+                font-weight: 300;
+                &:hover {
+                    background-color: transparent;
+                }
+                &:before {
+                    content: "CLOSE";
+                    text-transform: capitalize;
+                    padding-right: 10px;
+                    color: black;
+                }
+            }
+        }
+
+        .entry-canvas {
+            width: 100%;
+            height: 65%;
+        }
+    }
+
 }

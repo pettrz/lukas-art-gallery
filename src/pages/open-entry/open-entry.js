@@ -11,7 +11,6 @@ const OpenEntry = ({ entry, closeModal }) => {
                 <h2>
                     {entry.title}
                 </h2>
-
                 <a href="javascript:void(0);" className="close-modal btn" onClick={closeModal}>
                     <img width="20px" height="20px" src={require('./close.svg')} alt="Close image modal"/>
                 </a>
