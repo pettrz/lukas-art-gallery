@@ -28,8 +28,8 @@ const OpenEntry = ({ entry, closeModal }) => {
         </a>
         <div className="glass"></div>
         <div className="entry-wrapper">
-            <div className="entry-canvas" title={title}>
-                <img src={require(`../../../static/img/${name}.jpg`)} alt=""/>
+            <div className="entry-canvas">
+                <img src={require(`../../../static/img/${name}.jpg`)} title={title} alt={`Painting named "${title}"`}/>
             </div>
             <div className="entry-description">
                 <h2>
