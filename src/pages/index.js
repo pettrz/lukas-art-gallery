@@ -10,10 +10,11 @@ class IndexPage extends React.Component {
         const about = document.querySelector('.about');
         const scrollUp = document.querySelector('.scroll-up-shortcut');
         const heroBtn = document.querySelector('.hero-btn');
-        const fakeCanvas = document.querySelector('.fake-canvas');
 
         const scrolly = window.scrollY - 300;
-        about.style.opacity = (scrolly / 750).toString();
+        const windowWidth = window.innerWidth;
+        const aboutOffset = windowWidth < 576 ? 400 : 750;
+        about.style.opacity = (scrolly / aboutOffset).toString();
 
         if (window.scrollY < 800) {
             scrollUp.style.opacity = 0;
@@ -33,7 +34,7 @@ class IndexPage extends React.Component {
     };
 
     scrollToGallery() {
-        window.scrollTo({top: 950, behavior: 'smooth'});
+        window.scrollTo({top: 850, behavior: 'smooth'});
     };
 
     componentDidMount() {
