@@ -33,7 +33,7 @@ class IndexPage extends React.Component {
     };
 
     scrollToGallery() {
-        window.scrollTo({top: 1050, behavior: 'smooth'});
+        window.scrollTo({top: 950, behavior: 'smooth'});
     };
 
     componentDidMount() {
