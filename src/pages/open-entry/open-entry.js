@@ -4,6 +4,8 @@ import './open-entry.scss';
 
 const OpenEntry = ({ entry, closeModal }) => {
     const name = _.get(entry, 'name', null);
+    const title = _.get(entry, 'title', '');
+
     return (<>
         <div className="glass"></div>
         <div className="entry-wrapper">
@@ -11,7 +13,7 @@ const OpenEntry = ({ entry, closeModal }) => {
             </div>
             <div className="entry-description">
                 <h2>
-                    {entry.title}
+                    {title}
                 </h2>
                 <a href="javascript:void(0);" className="close-modal btn" onClick={closeModal}>
                     <img width="20px" height="20px" src={require('./close.svg')} alt="Close image modal"/>
