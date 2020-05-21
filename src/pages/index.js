@@ -23,11 +23,12 @@ class IndexPage extends React.Component {
         const windowWidth = window.innerWidth;
         const aboutOffset = windowWidth < 576 ? 400 : 750;
         about.style.opacity = (scrolly / aboutOffset).toString();
-
-        if (window.scrollY < 800) {
-            scrollUp.style.opacity = 0;
-        } else {
-            scrollUp.style.opacity = 1;
+        if (scrollUp) {
+            if (window.scrollY < 800) {
+                scrollUp.style.opacity = 0;
+            } else {
+                scrollUp.style.opacity = 1;
+            }
         }
 
         if (window.scrollY < 1) {
@@ -123,10 +124,12 @@ class IndexPage extends React.Component {
                 <footer>
                     &copy; 2020 Lukas Juhlén
                     
-                    <a href="javascript:void(0);" onClick={this.scrollToTop}
-                    title="Scroll to top" className="scroll-up-shortcut btn">
-                        <img width="20px" height="20px" src={require('../../static/img/scroll-up-icon.svg')} alt="scroll to top of page"/>
-                    </a>
+                    {!this.state.openEntry &&
+                        <a href="javascript:void(0);" onClick={this.scrollToTop}
+                        title="Scroll to top" className="scroll-up-shortcut btn">
+                            <img width="20px" height="20px" src={require('../../static/img/scroll-up-icon.svg')} alt="scroll to top of page"/>
+                        </a>
+                    }
                 </footer>
             </div>
         )
