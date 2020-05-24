@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Your images are to big so they need to be compressed. click <a href="http://www.simpleimageresizer.com/upload">here</a> and make the image 70% smaller. Thrn upload that imgage to here.</p>
+    <form id="new-art" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title" id="title">
+        <textarea name="Description" rows="5" cols="30" placeholder="Description" id="description"></textarea>
+        <input type="file" id="image" accept="image/*">
+        <button type="button" onclick="upload()">Upload</button>
+    </form>
+
+
+
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCXDJPv6Rl-7AZLyxvfZ8ovNRul2W-5pFA",
+            authDomain: "lukas-art-gallery-4c0c8.firebaseapp.com",
+            databaseURL: "https://lukas-art-gallery-4c0c8.firebaseio.com",
+            projectId: "lukas-art-gallery-4c0c8",
+            storageBucket: "lukas-art-gallery-4c0c8.appspot.com",
+            messagingSenderId: "939044711055",
+            appId: "1:939044711055:web:d6fba7074ec770d04e1efa",
+            measurementId: "G-TC81KVJJW8"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        firebase.analytics();
+    </script>
+
+
+    <script src="upload.js"></script>
+</body>
+
+</html>

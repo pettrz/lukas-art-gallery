@@ -147,10 +147,6 @@ class IndexPage extends React.Component {
                 <div className="bottom">
                     
                 </div>
-                <form action="/upload" method="post" enctype="multipart/form-data">
-                    <input type="file" accept="image/*" name="photo"/>
-                    <input type="submit" value="upload"/>
-                </form>
                 <footer>
                     &copy; 2020 Lukas Juhlén
                     
