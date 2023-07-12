@@ -28,7 +28,7 @@
   "devDependencies": {
     "@prototype-interactive/eslint-config": "^0.1.1",
     "autoprefixer": "^9.4.4",
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "cross-env": "^5.2.0",
     "eslint": "^5.12.0",
     "gatsby": "^2.0.115",
